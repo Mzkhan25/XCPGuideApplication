@@ -107,6 +107,27 @@
               </children>
             </children>
           </children>
+          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
+            <properties name="text" value="Tasks"/>
+            <properties name="iconCls" value=""/>
+            <properties name="hidden" value=""/>
+            <properties name="disabled" value=""/>
+            <properties name="cls" value=""/>
+            <properties name="tooltip" value=""/>
+            <properties name="navType" value="page_static"/>
+            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="testapp_tasks">
+              <data selectionName="tasks" selectionLabel="Tasks">
+                <dataRef href="urn:testapp:com.emc.xcp.artifact.page:Artifacts/Pages/tasks.page#/"/>
+              </data>
+            </properties>
+            <properties name="navPageIdExpr" value=""/>
+            <properties name="navUrlExpr" value=""/>
+            <properties name="navObjectId" value=""/>
+            <properties name="navToNewTab" value="" type="BOOLEAN"/>
+            <properties name="navNewTabTarget" value=""/>
+            <properties name="navUrlParams" value=""/>
+            <properties name="xcpId" value="tasks"/>
+          </children>
           <children componentDefinitionId="xcp_user_button">
             <properties name="cls" value=""/>
             <properties name="xcpId" value="user_button"/>
