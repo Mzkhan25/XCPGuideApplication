@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsAlertQuery:AlertQuery xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAlert="http://xcp.emc.com/alert" xmlns:nsAlertQuery="http://xcp.emc.com/alertquery" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:search="http://xcp.emc.com/search" urn="urn:testapp:com.emc.xcp.artifact.alertquery:Artifacts/Alert Queries/long_running_claims.alertquery" categoryId="com.emc.xcp.artifact.alertquery" name="long_running_claims" label="Long Running Claims">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="long_running_claims" label="Long Running Claims" implCategoryId="com.emc.xcp.artifact.alertquery">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="a_r_object_id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name_1" label="Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="createdon" label="Created on">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="alert_status" label="Alert Status">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:xcp:com.emc.xcp.artifact.picklist:Artifacts/Picklists/alert_status.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="alert_severity" label="Alert Severity">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:xcp:com.emc.xcp.artifact.picklist:Artifacts/Picklists/alert_severity.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Alert Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Alert Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+    </primaryElement>
+  </datasource>
+  <predefinedInputs xsi:type="search:TypedSearchStringPredefinedInput" operator="com.emc.xcp.model.common.StringOperator:NOT_EQUAL">
+    <value exprStr="'Closed'"/>
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.alert:Artifacts/Alerts/dmc_xcp_alert.alert#//@alertOutputs.5"/>
+    </contextSelection>
+  </predefinedInputs>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#//@alertOutputs.0"/>
+    </contextSelection>
+  </columns>
+  <columns label="Name">
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#//@alertOutputs.1"/>
+    </contextSelection>
+  </columns>
+  <columns label="Created on">
+    <contextSelection selectionType="DATETIME">
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#//@alertOutputs.2"/>
+    </contextSelection>
+  </columns>
+  <columns label="Alert Status">
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.alert:Artifacts/Alerts/dmc_xcp_alert.alert#//@alertOutputs.4"/>
+    </contextSelection>
+  </columns>
+  <columns label="Alert Severity">
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.alert:Artifacts/Alerts/dmc_xcp_alert.alert#//@alertOutputs.5"/>
+    </contextSelection>
+  </columns>
+  <columns label="Alert Object ID">
+    <contextSelection>
+      <parentRef selectionName="long_running_claim" selectionLabel="Long Running Claim" useNamePreferred="true">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.alert:Artifacts/Alerts/dmc_xcp_alert.alert#//@alertOutputs.1"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsAlert:HistoricalAlert" href="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert#/"/>
+</nsAlertQuery:AlertQuery>

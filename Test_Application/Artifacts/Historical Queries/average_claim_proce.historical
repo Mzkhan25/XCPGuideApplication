@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasourcehistorical:HistoricalDatasource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datasourceaggregation="http://documentum.emc.com/artifact/datasourceaggregation" xmlns:datasourcecommon="http://documentum.emc.com/artifact/datasourcecommon" xmlns:datasourcehistorical="http://documentum.emc.com/artifact/datasourcehistorical" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/average_claim_proce.historical" categoryId="com.emc.xcp.artifact.datasourcehistorical" name="average_claim_proce" label="Average Claim Processing Time" rootEntity="//@datasourceEntities.0" firstCalculationLevel="//@datasourceCalculations.0">
+  <datasourceEntities xsi:type="datasourcehistorical:DatasourceEntity" instanceId="elrDivGq4Bz9FDyof+eKHy" path="claim" artifactType="Folder">
+    <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    <fields xsi:type="datasourcecommon:EventField" name="name" label="Event Name" instanceId="7YdBzXS0AJt86tX34PN2pk" fieldPath="event.name" event="//@subscribedEvents.1" source="//@subscribedEvents.1">
+      <type xsi:type="nsAttributeDatatypes:StringType"/>
+    </fields>
+    <fields xsi:type="datasourcecommon:EventField" name="createdon" label="Created on" instanceId="cCOUmS*p4sJ8ggyvJxAcHM" fieldPath="event.createdOn" columnIndex="1" event="//@subscribedEvents.1" source="//@subscribedEvents.1">
+      <type xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </fields>
+    <fields xsi:type="datasourcecommon:EventField" name="createdon_1" label="Created on_1" instanceId="7rKLSjRPkZH92cbBFnHBeW" fieldPath="event.createdOn" columnIndex="2" event="//@subscribedEvents.0" source="//@subscribedEvents.0">
+      <type xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </fields>
+  </datasourceEntities>
+  <datasourceCalculations label="Basic step" nextLevel="//@datasourceCalculations.1">
+    <calculationFields name="name" label="Event Name" instanceId="etvKTkK7kA4atietkRX0Fs" source="//@datasourceEntities.0/@fields.0" nextCalculation="//@datasourceCalculations.1/@calculationFields.0">
+      <dataType xsi:type="nsAttributeDatatypes:StringType"/>
+    </calculationFields>
+    <calculationFields name="createdon" label="Created on" instanceId="6dHoNuDO45V9TueDvsDSyE" columnIndex="1" source="//@datasourceEntities.0/@fields.1" nextCalculation="//@datasourceCalculations.1/@calculationFields.1">
+      <dataType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </calculationFields>
+    <calculationFields name="createdon_1" label="Created on_1" instanceId="3qHdJYztATY9W4Y7rrWN1G" columnIndex="2" source="//@datasourceEntities.0/@fields.2" nextCalculation="//@datasourceCalculations.1/@calculationFields.2">
+      <dataType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </calculationFields>
+    <calculationFields xsi:type="datasourceaggregation:ComputedColumnField" name="s0_claim_processing_duratio" label="Claim Processing Duration" instanceId="+N7AZaRARNa4xF2z7xec7" columnIndex="3" nextCalculation="//@datasourceCalculations.1/@calculationFields.3">
+      <dataType xsi:type="nsAttributeDatatypes:IntegerType"/>
+      <expression exprStr="abs(differenceSeconds(createdon,createdon_1))"/>
+    </calculationFields>
+  </datasourceCalculations>
+  <datasourceCalculations label="Step 1" levelIndex="1" prevLevel="//@datasourceCalculations.0">
+    <calculationFields xsi:type="datasourceaggregation:AggregationField" name="s1gro_name" label="Event Name" instanceId="R7ggj08QUk9C1wevF22Op" source="//@datasourceEntities.0/@fields.0" prevCalculation="//@datasourceCalculations.0/@calculationFields.0" function="Group by">
+      <dataType xsi:type="nsAttributeDatatypes:StringType"/>
+    </calculationFields>
+    <calculationFields xsi:type="datasourceaggregation:AggregationField" name="s1gro_createdon" label="Created on" instanceId="9OBFhtpVkBr8iBHXuNF0nz" columnIndex="1" source="//@datasourceEntities.0/@fields.1" prevCalculation="//@datasourceCalculations.0/@calculationFields.1" function="Group by">
+      <dataType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </calculationFields>
+    <calculationFields xsi:type="datasourceaggregation:AggregationField" name="s1gro_createdon_1" label="Created on_1" instanceId="ck0*yIlzAqtanfuPOQBUna" columnIndex="2" source="//@datasourceEntities.0/@fields.2" prevCalculation="//@datasourceCalculations.0/@calculationFields.2" function="Group by">
+      <dataType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </calculationFields>
+    <calculationFields xsi:type="datasourceaggregation:AggregationField" name="s0ave_average_of_claim_proc" label="Average of Claim Processing Duration" instanceId="dHkSmUrC4y*ahVRs44+irj" columnIndex="3" prevCalculation="//@datasourceCalculations.0/@calculationFields.3" function="Average">
+      <dataType xsi:type="nsAttributeDatatypes:FloatType"/>
+    </calculationFields>
+  </datasourceCalculations>
+  <subscribedEvents>
+    <event href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#//@eventConfigs[label='Claim%20Processed']"/>
+    <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+  </subscribedEvents>
+  <subscribedEvents>
+    <event href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#//@eventConfigs[label='Process%20Claim']"/>
+    <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+  </subscribedEvents>
+  <dataServiceContracts xsi:type="nsDataserviceContract:DataSourceContract" categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="average_claim_proce" label="Average Claim Processing Time" implCategoryId="com.emc.xcp.artifact.datasourcehistorical">
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_name" label="Event Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_createdon" label="Created on">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_createdon_1" label="Created on_1">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s0ave_average_of_claim_proc" label="Average of Claim Processing Duration">
+          <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement name="claim">
+      <dataModel href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    </primaryElement>
+  </dataServiceContracts>
+  <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="average_claim_proce" label="Average Claim Processing Time" implCategoryId="com.emc.xcp.artifact.datasourcehistorical">
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_name" label="Event Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_createdon" label="Created on">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s1gro_createdon_1" label="Created on_1">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="s0ave_average_of_claim_proc" label="Average of Claim Processing Duration">
+          <attributeType xsi:type="nsAttributeDatatypes:FloatType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement name="claim">
+      <dataModel href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    </primaryElement>
+    <actionType type="Export"/>
+  </dataServiceContracts>
+</datasourcehistorical:HistoricalDatasource>

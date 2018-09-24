@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasourcehistorical:HistoricalDatasource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datasourcecommon="http://documentum.emc.com/artifact/datasourcecommon" xmlns:datasourcehistorical="http://documentum.emc.com/artifact/datasourcehistorical" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/running_claim_proce.historical" categoryId="com.emc.xcp.artifact.datasourcehistorical" name="running_claim_proce" label="Running Claim Processes" rootEntity="//@datasourceEntities.0" firstCalculationLevel="//@datasourceCalculations.0">
+  <datasourceEntities xsi:type="datasourcehistorical:DatasourceEntity" instanceId="37QKa4lW41b9GpDWoz1L4H" path="claim" artifactType="Folder">
+    <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    <fields xsi:type="datasourcecommon:EventField" name="createdon" label="Created on" instanceId="6nX+vkM+QnxbbAoYWnSHIv" fieldPath="event.createdOn" event="//@subscribedEvents.0" source="//@subscribedEvents.0">
+      <type xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </fields>
+    <fields xsi:type="datasourcecommon:DatasourceField" name="a_r_object_id" label="Object ID" instanceId="aG2uhtse4*Ca7npPKay7q9" fieldPath="event.claim.r_object_id" columnIndex="1" event="//@subscribedEvents.0">
+      <source href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </fields>
+    <fields xsi:type="datasourcecommon:DatasourceField" name="object_name" label="Name" instanceId="9bihtsOEAyBb0GO0AHOw3K" fieldPath="event.claim.object_name" columnIndex="2" event="//@subscribedEvents.0">
+      <source href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='object_name']"/>
+    </fields>
+    <fields xsi:type="datasourcecommon:DatasourceField" name="claim_status" label="Claim Status" instanceId="7jlfQYa*AbharAt*PpqSHJ" fieldPath="event.claim.claim_status" columnIndex="3" event="//@subscribedEvents.0">
+      <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#//@attributes[name='claim_status']"/>
+    </fields>
+  </datasourceEntities>
+  <datasourceCalculations label="Basic step">
+    <calculationFields name="createdon" label="Created on" instanceId="9vtj7FdmAOM8sqTkD6fCrs" source="//@datasourceEntities.0/@fields.0">
+      <dataType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    </calculationFields>
+    <calculationFields name="a_r_object_id" label="Object ID" instanceId="eLHsVzeuQ+A9DtzuefQ33q" columnIndex="1" source="//@datasourceEntities.0/@fields.1">
+      <dataType xsi:type="nsAttributeDatatypes:StringType" length="16"/>
+    </calculationFields>
+    <calculationFields name="object_name" label="Name" instanceId="8skiH*+Y4LTbr9uC8pduR1" columnIndex="2" source="//@datasourceEntities.0/@fields.2">
+      <dataType xsi:type="nsAttributeDatatypes:StringType" length="255"/>
+    </calculationFields>
+    <calculationFields name="claim_status" label="Claim Status" instanceId="685rPcKkAC49xgJz4Q*u0K" columnIndex="3" source="//@datasourceEntities.0/@fields.3">
+      <dataType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:testapp:com.emc.xcp.artifact.picklist:Artifacts/Picklists/claim_status.picklist#/"/>
+      </dataType>
+    </calculationFields>
+  </datasourceCalculations>
+  <subscribedEvents>
+    <event href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#//@eventConfigs[label='Process%20Claim']"/>
+    <source href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+  </subscribedEvents>
+  <dataServiceContracts xsi:type="nsDataserviceContract:DataSourceContract" categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="running_claim_proce" label="Running Claim Processes" implCategoryId="com.emc.xcp.artifact.datasourcehistorical">
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="createdon" label="Created on">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="a_r_object_id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType" length="16"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType" length="255"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="claim_status" label="Claim Status">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:testapp:com.emc.xcp.artifact.picklist:Artifacts/Picklists/claim_status.picklist#/"/>
+          </attributeType>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement name="claim">
+      <dataModel href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    </primaryElement>
+  </dataServiceContracts>
+  <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="running_claim_proce" label="Running Claim Processes" implCategoryId="com.emc.xcp.artifact.datasourcehistorical">
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="createdon" label="Created on">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="a_r_object_id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType" length="16"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType" length="255"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="claim_status" label="Claim Status">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:testapp:com.emc.xcp.artifact.picklist:Artifacts/Picklists/claim_status.picklist#/"/>
+          </attributeType>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement name="claim">
+      <dataModel href="urn:testapp:com.emc.xcp.artifact.folder:Artifacts/Folders/claim.folder#/"/>
+    </primaryElement>
+    <actionType type="Export"/>
+  </dataServiceContracts>
+</datasourcehistorical:HistoricalDatasource>

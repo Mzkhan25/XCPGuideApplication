@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsAlert:HistoricalAlert xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:datasourceaggregation="http://documentum.emc.com/artifact/datasourceaggregation" xmlns:datasourcehistorical="http://documentum.emc.com/artifact/datasourcehistorical" xmlns:nsAlert="http://xcp.emc.com/alert" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" urn="urn:testapp:com.emc.xcp.artifact.alert:Artifacts/Alerts/long_running_claim.alert" categoryId="com.emc.xcp.artifact.alert" name="long_running_claim" label="Long Running Claim" TimeGranularity="Daily">
+  <alertOutputs name="a_r_object_id" label="Object ID" fieldPath="running_claim_proce.a_r_object_id">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="16"/>
+    <source xsi:type="datasourceaggregation:CalculationField" href="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/running_claim_proce.historical#//@datasourceCalculations.0/@calculationFields.1"/>
+  </alertOutputs>
+  <alertOutputs name="object_name_1" label="Name" fieldPath="running_claim_proce.object_name">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="255"/>
+    <source xsi:type="datasourceaggregation:CalculationField" href="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/running_claim_proce.historical#//@datasourceCalculations.0/@calculationFields.2"/>
+  </alertOutputs>
+  <alertOutputs name="createdon" label="Created on" fieldPath="running_claim_proce.createdon">
+    <type xsi:type="nsAttributeDatatypes:DateTimeType"/>
+    <source xsi:type="datasourceaggregation:CalculationField" href="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/running_claim_proce.historical#//@datasourceCalculations.0/@calculationFields.0"/>
+  </alertOutputs>
+  <alertExpression exprStr="differenceSeconds(now(),running_claim_proce.createdon) > 300 AND running_claim_proce.claim_status &lt; 2"/>
+  <source xsi:type="datasourcehistorical:HistoricalDatasource" href="urn:testapp:com.emc.xcp.artifact.datasourcehistorical:Artifacts/Historical Queries/running_claim_proce.historical#/"/>
+</nsAlert:HistoricalAlert>
