@@ -128,6 +128,27 @@
             <properties name="navUrlParams" value=""/>
             <properties name="xcpId" value="tasks"/>
           </children>
+          <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_nav_button">
+            <properties name="text" value="Document Search"/>
+            <properties name="iconCls" value=""/>
+            <properties name="hidden" value=""/>
+            <properties name="disabled" value=""/>
+            <properties name="cls" value=""/>
+            <properties name="tooltip" value=""/>
+            <properties name="navType" value="page_static"/>
+            <properties xsi:type="uitemplate:DataboundProperty" name="navPageId" value="testapp_claim_document_sear">
+              <data selectionName="claim_document_sear" selectionLabel="Claim Document Search">
+                <dataRef href="urn:testapp:com.emc.xcp.artifact.page:Artifacts/Pages/claim_document_sear.page#/"/>
+              </data>
+            </properties>
+            <properties name="navPageIdExpr" value=""/>
+            <properties name="navUrlExpr" value=""/>
+            <properties name="navObjectId" value=""/>
+            <properties name="navToNewTab" value="" type="BOOLEAN"/>
+            <properties name="navNewTabTarget" value=""/>
+            <properties name="navUrlParams" value=""/>
+            <properties name="xcpId" value="search"/>
+          </children>
           <children componentDefinitionId="xcp_user_button">
             <properties name="cls" value=""/>
             <properties name="xcpId" value="user_button"/>

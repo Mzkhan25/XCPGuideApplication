@@ -785,6 +785,7 @@
       <properties name="selectedTab" value=""/>
       <properties name="renderAllTabsOnLoad" value="false" type="BOOLEAN"/>
       <properties name="xcpId" value="tab_group"/>
+      <properties name="items"/>
       <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_tab">
         <properties name="title" value="Task Details"/>
         <properties name="tooltip" value=""/>
@@ -794,6 +795,7 @@
         <properties name="hidden" value=""/>
         <properties name="disabled" value=""/>
         <properties name="xcpId" value="tab"/>
+        <properties name="items"/>
         <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
           <properties name="title"/>
           <properties name="collapsible" value="false" type="BOOLEAN"/>
@@ -1129,6 +1131,7 @@
         <properties name="hidden" value=""/>
         <properties name="disabled" value=""/>
         <properties name="xcpId" value="tab2"/>
+        <properties name="items"/>
         <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_results_list" dataService="//@dataSources[name='taskhistory_initiate_staless_ds']">
           <properties name="title" value=""/>
           <properties name="typeName" value="xcp_taskhistory_initiate"/>

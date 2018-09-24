@@ -587,7 +587,7 @@
         </conditions>
         <conditions name="EXCEPTIONAL">
           <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
-            <reference refValue="//@flows[name='L3']"/>
+            <reference refValue="//@flows[name='L4']"/>
           </returnValues>
         </conditions>
       </resolver>
@@ -1149,31 +1149,31 @@
     </packageCharacteristics>
   </processData>
   <flows name="L1" from="//@activities[name='Initiate']" to="//@activities[name='First%20Approval']">
-    <uiinfo labelText="" srcActivityLocIndex="3" destActivityLocIndex="4">
+    <uiinfo srcActivityLocIndex="3" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
   <flows name="L2" from="//@activities[name='First%20Approval']" to="//@activities[name='Pre-Approved?']">
-    <uiinfo labelText="" srcActivityLocIndex="4" destActivityLocIndex="4">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
   <flows name="L3" from="//@activities[name='Pre-Approved?']" to="//@activities[name='Review%20Completed']">
-    <uiinfo labelText="" srcActivityLocIndex="4" destActivityLocIndex="4">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
   <flows name="L4" from="//@activities[name='Pre-Approved?']" to="//@activities[name='Second%20Approval']">
-    <uiinfo labelText="" srcActivityLocIndex="4" destActivityLocIndex="4">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
   </flows>
   <flows name="L5" from="//@activities[name='Second%20Approval']" to="//@activities[name='Review%20Completed']">
-    <uiinfo labelText="" srcActivityLocIndex="4" destActivityLocIndex="4">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </uiinfo>
@@ -1188,13 +1188,13 @@
       </textStyle>
     </startActivityUIInfo>
     <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
-      <topLeftPoint x="367" y="406"/>
+      <topLeftPoint x="366" y="406"/>
       <textStyle fontName="Dialog" fontSize="10">
         <bgColor/>
         <fgColor/>
       </textStyle>
     </endActivityUIInfo>
-    <endSequenceFlowUIInfo labelText="" srcActivityLocIndex="4" destActivityLocIndex="4">
+    <endSequenceFlowUIInfo srcActivityLocIndex="4" destActivityLocIndex="4">
       <line/>
       <labelStyle fontName="Helvetica" fontSize="10"/>
     </endSequenceFlowUIInfo>
