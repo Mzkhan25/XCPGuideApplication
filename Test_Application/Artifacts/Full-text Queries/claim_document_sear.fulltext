@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fulltext:FullTextSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fulltext="http://xcp.emc.com/search/fulltext" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:testapp:com.emc.xcp.artifact.search.fulltext:Artifacts/Full-text Queries/claim_document_sear.fulltext" categoryId="com.emc.xcp.artifact.search.fulltext" name="claim_document_sear" label="Claim Document Search" summaryColumn="true">
+<fulltext:FullTextSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:contentanalytics="http://xcp.emc.com/contentanalytics" xmlns:fulltext="http://xcp.emc.com/search/fulltext" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:testapp:com.emc.xcp.artifact.search.fulltext:Artifacts/Full-text Queries/claim_document_sear.fulltext" categoryId="com.emc.xcp.artifact.search.fulltext" name="claim_document_sear" label="Claim Document Search" summaryColumn="true">
   <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="claim_document_sear" label="Claim Document Search" implCategoryId="com.emc.xcp.artifact.search.fulltext">
     <inputs xsi:type="nsDataserviceContract:AttributeElement" name="q" label="Full-Text">
       <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
@@ -64,6 +64,11 @@
     <facets name="facet_object_type" label="Object type">
       <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
         <attributeType xsi:type="nsAttributeDatatypes:StringType" href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_type']/@type"/>
+      </facetType>
+    </facets>
+    <facets name="facet_business_terms_usa_" label="Business Terms (USA)">
+      <facetType xsi:type="nsDataserviceContract:AttributeDataTypeFacet">
+        <attributeType xsi:type="contentanalytics:DiscoveredMetadataType" href="urn:testapp:com.emc.xcp.artifact.doc:Artifacts/Content/claim_document.content#//@attributes[name='business']/@type"/>
       </facetType>
     </facets>
   </datasource>
@@ -139,6 +144,16 @@
         <dataRef href="urn:testapp:com.emc.xcp.artifact.doc:Artifacts/Content/claim_document.content#/"/>
       </parentRef>
       <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_type']"/>
+    </contextSelection>
+    <groupBy xsi:type="fulltext:StringGroupBy"/>
+    <applyCondition/>
+  </filters>
+  <filters xsi:type="fulltext:StringFilter" name="business_terms_usa_" label="Business Terms (USA)" orderBy="FREQUENCY">
+    <contextSelection>
+      <parentRef selectionType="MODEL">
+        <dataRef href="urn:testapp:com.emc.xcp.artifact.doc:Artifacts/Content/claim_document.content#/"/>
+      </parentRef>
+      <dataRef href="urn:testapp:com.emc.xcp.artifact.doc:Artifacts/Content/claim_document.content#//@attributes[name='business']"/>
     </contextSelection>
     <groupBy xsi:type="fulltext:StringGroupBy"/>
     <applyCondition/>

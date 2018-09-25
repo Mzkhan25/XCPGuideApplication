@@ -80,78 +80,6 @@
         <properties name="tooltip" value=""/>
         <properties name="cls" value=""/>
         <properties name="xcpId" value="columnvbox3"/>
-        <children componentDefinitionId="xcp_value_display">
-          <properties name="fieldLabel" value="Business Terms (USA)"/>
-          <properties name="valueType" value="STRING"/>
-          <properties name="isRepeating" value="true" type="BOOLEAN"/>
-          <properties name="name" value=""/>
-          <properties name="cls" value=""/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
-            <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
-              <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
-              <properties name="separatorStyle" value="NEWLINE"/>
-              <properties name="separator" value="COMMA"/>
-            </formatter>
-          </properties>
-          <properties name="hstretch" value="" type="BOOLEAN"/>
-          <properties name="store" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="tooltip" value=""/>
-          <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
-          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.business"/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="format">
-            <formatter/>
-          </properties>
-          <properties name="xcpId" value="business"/>
-        </children>
-        <children componentDefinitionId="xcp_value_display">
-          <properties name="fieldLabel" value="Email Address"/>
-          <properties name="valueType" value="STRING"/>
-          <properties name="isRepeating" value="true" type="BOOLEAN"/>
-          <properties name="name" value=""/>
-          <properties name="cls" value=""/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
-            <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
-              <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
-              <properties name="separatorStyle" value="NEWLINE"/>
-              <properties name="separator" value="COMMA"/>
-            </formatter>
-          </properties>
-          <properties name="hstretch" value="" type="BOOLEAN"/>
-          <properties name="store" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="tooltip" value=""/>
-          <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
-          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.email"/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="format">
-            <formatter/>
-          </properties>
-          <properties name="xcpId" value="email"/>
-        </children>
-        <children componentDefinitionId="xcp_value_display">
-          <properties name="fieldLabel" value="Phone Number"/>
-          <properties name="valueType" value="STRING"/>
-          <properties name="isRepeating" value="true" type="BOOLEAN"/>
-          <properties name="name" value=""/>
-          <properties name="cls" value=""/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
-            <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
-              <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
-              <properties name="separatorStyle" value="NEWLINE"/>
-              <properties name="separator" value="COMMA"/>
-            </formatter>
-          </properties>
-          <properties name="hstretch" value="" type="BOOLEAN"/>
-          <properties name="store" value=""/>
-          <properties name="hidden" value=""/>
-          <properties name="tooltip" value=""/>
-          <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
-          <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.phone"/>
-          <properties xsi:type="uitemplate:ObjectProperty" name="format">
-            <formatter/>
-          </properties>
-          <properties name="xcpId" value="phone"/>
-        </children>
       </children>
     </children>
     <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
@@ -372,6 +300,7 @@
         <properties name="defaultMargins" value="5"/>
         <properties name="margins" value=""/>
         <properties name="xcpId" value="columnvbox"/>
+        <properties name="tooltip" value=""/>
         <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
           <properties name="title" value="Document Info"/>
           <properties name="collapsible" value="false" type="BOOLEAN"/>
@@ -559,6 +488,75 @@
                 <formatter/>
               </properties>
               <properties name="xcpId" value="r_creator_name"/>
+            </children>
+            <children componentDefinitionId="xcp_value_display">
+              <properties name="fieldLabel" value="Business Terms (USA)"/>
+              <properties name="valueType" value="STRING"/>
+              <properties name="isRepeating" value="true" type="BOOLEAN"/>
+              <properties name="name" value=""/>
+              <properties name="cls" value=""/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
+                <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
+                  <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
+                  <properties name="separatorStyle" value="NEWLINE"/>
+                </formatter>
+              </properties>
+              <properties name="hstretch" value="" type="BOOLEAN"/>
+              <properties name="store" value=""/>
+              <properties name="hidden" value=""/>
+              <properties name="tooltip" value=""/>
+              <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
+              <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.business"/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="format">
+                <formatter/>
+              </properties>
+              <properties name="xcpId" value="business"/>
+            </children>
+            <children componentDefinitionId="xcp_value_display">
+              <properties name="fieldLabel" value="Phone Number"/>
+              <properties name="valueType" value="STRING"/>
+              <properties name="isRepeating" value="true" type="BOOLEAN"/>
+              <properties name="name" value=""/>
+              <properties name="cls" value=""/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
+                <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
+                  <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
+                  <properties name="separatorStyle" value="NEWLINE"/>
+                </formatter>
+              </properties>
+              <properties name="hstretch" value="" type="BOOLEAN"/>
+              <properties name="store" value=""/>
+              <properties name="hidden" value=""/>
+              <properties name="tooltip" value=""/>
+              <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
+              <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.phone"/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="format">
+                <formatter/>
+              </properties>
+              <properties name="xcpId" value="phone"/>
+            </children>
+            <children componentDefinitionId="xcp_value_display">
+              <properties name="fieldLabel" value="Email Address"/>
+              <properties name="valueType" value="STRING"/>
+              <properties name="isRepeating" value="true" type="BOOLEAN"/>
+              <properties name="name" value=""/>
+              <properties name="cls" value=""/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="repeatingAttributeFormat">
+                <formatter componentDefinitionId="xcp_repeating_attribute_formatter">
+                  <properties name="xtype" value="xcp_repeating_attribute_formatter"/>
+                  <properties name="separatorStyle" value="NEWLINE"/>
+                </formatter>
+              </properties>
+              <properties name="hstretch" value="" type="BOOLEAN"/>
+              <properties name="store" value=""/>
+              <properties name="hidden" value=""/>
+              <properties name="tooltip" value=""/>
+              <properties name="disableImgLayout" value="false" type="BOOLEAN"/>
+              <properties xsi:type="uitemplate:DataboundProperty" name="value" value="claim_document.email"/>
+              <properties xsi:type="uitemplate:ObjectProperty" name="format">
+                <formatter/>
+              </properties>
+              <properties name="xcpId" value="email"/>
             </children>
           </children>
         </children>

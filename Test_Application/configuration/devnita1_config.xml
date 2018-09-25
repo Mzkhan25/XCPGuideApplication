@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ApplicationConfiguration application-name="Test_Application" namespace="testapp" version="1.0.0" description="">
+    <configuration type="WORKQUEUE" name="claims_work_queue" namespace="testapp" id="com.emc.xcp.artifact.appparameter">
+        <property name="value">claims</property>
+    </configuration>
+</ApplicationConfiguration>

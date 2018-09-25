@@ -9,11 +9,11 @@
     </inputMappings>
     <contract xsi:type="nsDataserviceContract:DataSourceContract" href="urn:testapp:com.emc.xcp.artifact.search.fulltext:Artifacts/Full-text Queries/claim_document_sear.fulltext#//@datasource"/>
   </dataSources>
-  <actionInstanceProperty actionInstance="//@dataSources[name='claim_document_sear']" invokeOnPageLoad="false"/>
-  <title exprStr="Claim Document Search"/>
+  <actionInstanceProperty actionInstance="//@dataSources[name='claim_document_sear']"/>
+  <title/>
   <rootContainer>
     <properties name="xcpId" value="root"/>
-    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box" dataService="//@dataSources[name='claim_document_sear']">
+    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
       <properties name="title" value=""/>
       <properties name="collapsible" value="false" type="BOOLEAN"/>
       <properties name="collapsed" value=""/>
@@ -40,6 +40,36 @@
         <properties name="tooltip" value=""/>
         <properties name="cls" value=""/>
         <properties name="xcpId" value="columnvbox"/>
+        <properties name="items"/>
+      </children>
+    </children>
+    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box" dataService="//@dataSources[name='claim_document_sear']">
+      <properties name="title" value=""/>
+      <properties name="collapsible" value="false" type="BOOLEAN"/>
+      <properties name="collapsed" value=""/>
+      <properties name="collapseFirst" value="true" type="BOOLEAN"/>
+      <properties name="border" value="false" type="BOOLEAN"/>
+      <properties name="defaultMargins" value="5"/>
+      <properties name="margins" value=""/>
+      <properties name="layout" value="xcp_columnbox"/>
+      <properties name="hidden" value=""/>
+      <properties name="cls" value=""/>
+      <properties name="xcpId" value="column_box4"/>
+      <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
+        <properties name="orientation" value="Vertical"/>
+        <properties name="width" value=""/>
+        <properties name="minWidth" value="" type="INTEGER"/>
+        <properties name="split" value="" type="BOOLEAN"/>
+        <properties name="overflow_x" value="hidden"/>
+        <properties name="labelWidth" value="150" type="INTEGER"/>
+        <properties name="labelAlign" value="left"/>
+        <properties name="halign" value="left"/>
+        <properties name="valign" value="top"/>
+        <properties name="defaultMargins" value="5"/>
+        <properties name="margins" value=""/>
+        <properties name="tooltip" value=""/>
+        <properties name="cls" value=""/>
+        <properties name="xcpId" value="columnvbox3"/>
         <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_column_box">
           <properties name="title" value=""/>
           <properties name="collapsible" value="false" type="BOOLEAN"/>
@@ -51,7 +81,7 @@
           <properties name="layout" value="xcp_columnbox"/>
           <properties name="hidden" value=""/>
           <properties name="cls" value=""/>
-          <properties name="xcpId" value="column_box1"/>
+          <properties name="xcpId" value="column_box5"/>
           <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnvbox">
             <properties name="orientation" value="Vertical"/>
             <properties name="width" value=""/>
@@ -66,7 +96,7 @@
             <properties name="margins" value=""/>
             <properties name="tooltip" value=""/>
             <properties name="cls" value=""/>
-            <properties name="xcpId" value="columnvbox1"/>
+            <properties name="xcpId" value="columnvbox5"/>
             <children componentDefinitionId="xcp_text_input" dataService="//@dataSources[name='claim_document_sear']">
               <properties name="fieldLabel" value="Full-Text"/>
               <properties name="emptyText" value=""/>
@@ -118,7 +148,7 @@
           <properties name="layout" value="xcp_columnbox"/>
           <properties name="hidden" value=""/>
           <properties name="cls" value=""/>
-          <properties name="xcpId" value="column_box2"/>
+          <properties name="xcpId" value="column_box7"/>
           <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_columnhbox">
             <properties name="orientation" value="Horizontal"/>
             <properties name="width" value=""/>
@@ -133,7 +163,7 @@
             <properties name="valign" value="top"/>
             <properties name="tooltip" value=""/>
             <properties name="cls" value=""/>
-            <properties name="xcpId" value="columnhbox"/>
+            <properties name="xcpId" value="columnhbox1"/>
             <children componentDefinitionId="xcp_button" dataService="//@dataSources[name='claim_document_sear']">
               <properties name="text" value="Search"/>
               <properties name="scale" value="small"/>
@@ -158,7 +188,7 @@
               <properties name="cls" value=""/>
               <properties name="disabled" value=""/>
               <properties name="hidden" value=""/>
-              <properties name="xcpId" value="button"/>
+              <properties name="xcpId" value="button1"/>
             </children>
           </children>
         </children>
@@ -178,12 +208,14 @@
         <values>facet_created_by</values>
         <values>facet_created_on</values>
         <values>facet_object_type</values>
+        <values>facet_business_terms_usa_</values>
       </properties>
       <properties xsi:type="uitemplate:ArrayProperty" name="facetLabels">
         <values>ContentType</values>
         <values>Created by</values>
         <values>Created on</values>
         <values>Object type</values>
+        <values>Business Terms (USA)</values>
       </properties>
       <properties name="selectionModel" value="false" type="BOOLEAN"/>
       <properties name="cls" value=""/>
@@ -212,6 +244,7 @@
       <properties name="disableremove" value=""/>
       <properties name="disablemovebtn" value=""/>
       <properties name="xcpId" value="claim_documents"/>
+      <properties name="columns"/>
       <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_results_list_page_link_column" dataService="//@dataSources[name='claim_document_sear']">
         <properties name="text" value="Name"/>
         <properties name="width" value="150" type="INTEGER"/>
@@ -384,6 +417,7 @@
         <properties name="navNewTabTarget" value=""/>
         <properties name="navUrlParams" value=""/>
         <properties name="xcpId" value="col_id"/>
+        <properties name="editorType"/>
       </children>
     </children>
   </rootContainer>

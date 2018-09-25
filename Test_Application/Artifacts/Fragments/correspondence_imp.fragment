@@ -75,7 +75,7 @@
           </formatter>
         </properties>
         <properties name="valid" value="">
-          <validationExpressions validationError="The correspondence date cannot be in the&#xD;&#xA;future">
+          <validationExpressions validationError="The correspondence date cannot be in the future">
             <expression exprStr="differenceDays(today(), widgets.correspondence_date.value)>=0"/>
             <widgetEvent widgetId="correspondence_date" eventName="change"/>
           </validationExpressions>
